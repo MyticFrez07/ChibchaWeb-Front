@@ -1,0 +1,12 @@
+<mat-expansion-panel class="my-2">
+  <mat-expansion-panel-header [style.background]="'rgba(0, 116, 186, 1)'">
+    <mat-panel-title>
+      {{title}}
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <p>{{descripcion}}</p>
+  <div >
+      <button *ngIf="boton" class="Boton">{{NombreBoton}}</button>
+  </div>
+</mat-expansion-panel>
+

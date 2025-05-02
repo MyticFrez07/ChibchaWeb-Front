@@ -1,0 +1,49 @@
+.card {
+  margin-top: 20px;
+
+  .card-header {
+    padding: 1.25rem;
+  }
+
+	.card-subtitle{
+		color: #fff;
+		background: rgb(1, 84, 136);
+	}
+	h3{
+		color: #fff !important;
+	}
+	h1{
+		font-size: 2.4rem;
+	}
+  .card-body {
+    padding: 1.25rem;
+
+    .pt-price-block {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .pt-list {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .card-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    padding: 1.25rem;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}

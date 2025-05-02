@@ -1,0 +1,21 @@
+$base-color: rgba(0, 116, 186, 1);
+
+.foot{
+  padding: 1rem;
+}
+
+.fit{
+  width: fit-content;
+}
+.contenedor{
+  border-radius: 5px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+.head{
+  background-color: $base-color;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: x-large;
+}

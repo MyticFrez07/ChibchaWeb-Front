@@ -1,0 +1,32 @@
+
+<div class="domain-item d-flex align-items-center">
+	<div class="mx-3">
+		<img height="auto" width="80px" [src]="domain['providerImage']" alt="">
+	</div>
+	<div class="domain-info">
+		<h2>{{ domain.name }}</h2>
+		<span>Proveedor: {{domain['provider']}}</span><br>
+		<span *ngIf="isDomainExist!= domain.name" class="badge bg-success mx-1">Disponible</span>
+		<span *ngIf="isDomainExist=== domain.name" class="badge bg-danger mx-1">Dominio no disponible</span>
+		<span *ngIf="domain['discount'] && isDomainExist!= domain.name" class="badge bg-warning text-dark mx-1">Promo</span>
+	</div>
+	<div class="text-end">
+		<span *ngIf="domain['discount']">
+			<del>$ {{domain['costDomain'].toLocaleString('es-CO')}} COP</del>
+		</span>
+		<div class="domain-price">
+			<span>$ {{ !domain['discount']?
+			domain['costDomain'].toLocaleString('es-CO') :
+			(domain['costDomain']-(domain['discount']*domain['costDomain'])/100).toLocaleString('es-CO') }} COP</span>
+			<small>{{ domain.subtitle }}</small>
+		</div>
+	</div>
+	<div class="domain-actions " *ngIf="isDomainExist!= domain.name">
+		<button class="btn m-2" [ngClass]="{ 'btn-success': !domain.inCart,'btn-primary': domain.inCart}" (click)="addToCart(domain)">
+			<i [ngClass]="{'bi bi-cart-check': domain.inCart, 'bi bi-cart-plus': !domain.inCart }"></i>
+		</button>
+		<button class="btn btn-danger m-2" (click)="removeFromCart(domain)" *ngIf="domain.inCart">
+			<i class="bi bi-trash"></i>
+		</button>
+	</div>
+</div>

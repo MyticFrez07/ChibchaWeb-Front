@@ -1,0 +1,63 @@
+$base-color: rgba(0, 116, 186, 1);
+.contenedor{
+  margin-top: 2rem ;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15rem;
+}
+.derecha{
+  display: flex;
+  flex-direction: column;
+  min-width: 800px;
+}
+.izquierda{
+  margin-right: 2rem;
+}
+.acordeon{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.cuadros{
+  min-width: 800px;
+  display: flex;
+  margin: 2rem 0;
+}
+app-recuadro{
+  flex: 1;
+}
+mat-form-field{
+  display: flex !important;
+}
+.cuadros-blancos{
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+.cuadros-blancos-derecha{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contenedor-dominios{
+  border-radius: 5px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+.head{
+  background-color: $base-color;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: x-large;
+}
+mat-form-field{
+  padding: 1rem;
+}
+.botones{
+  display: flex;
+  gap: 0.5rem;
+  float: right;
+  padding: 0 1rem;
+  margin-top: -1rem;
+}

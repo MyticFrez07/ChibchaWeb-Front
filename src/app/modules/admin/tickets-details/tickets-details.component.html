@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Detalles del Ticket</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="mb-3">
+                <h3 class="card-title"><strong>Asunto:</strong> {{ response.description }}</h3>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <p class="card-text"><strong>ID Ticket:</strong> {{ response.id }}</p>
+                    <p class="card-text"><strong>Nivel de Prioridad:</strong> {{ getPriorityLabel(response.priority) }}
+                    </p>
+                    <p class="card-text"><strong>Servicio:</strong> {{ response.services }}</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="card-text"><strong>Estado:</strong> {{ response.state ? 'Activo' : 'Inactivo' }}</p>
+                    <p class="card-text"><strong>Interesado:</strong> {{ response.user_id }}</p>
+                    <p class="card-text"><strong>User IT ID:</strong> {{ response.user_it_id }}</p>
+                </div>
+            </div>
+            <div>
+                <p class="card-text"><strong>Mensaje:</strong></p>
+                <p class="card-text">{{ response.message }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <a class="btn btn-primary" [routerLink]="['/admin/ticket-management']">Volver</a>
+    </div>
+</div>

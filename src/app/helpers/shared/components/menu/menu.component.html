@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="contenedor">
+    <div class="menu">
+      <a [routerLink]="['/admin/panel']">Home</a>
+      <a [routerLink]="['/admin/search']">Dominios</a>
+      <a [routerLink]="['/admin/hosting']">Hosting</a>
+      <a [routerLink]="['/admin/invoicing']">Facturación</a>
+      <a [routerLink]="['/admin/credit-card-managment']">Tarjetas</a>
+    </div>
+    <div class="correo" >
+      <p (click)="updateRole()">
+        Hola, {{username}}!
+      </p>
+    </div>
+  </div>
+</nav>

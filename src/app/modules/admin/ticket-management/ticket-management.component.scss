@@ -1,0 +1,19 @@
+.container-semaforo{
+    display: flex;
+}
+.semaforo{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #504f4f;
+    margin: 2px;
+    &.success{
+        background-color: #0bba28;
+    }
+    &.warning{
+        background-color: #97ba0b;
+    }
+    &.danger{
+        background-color: #ba0b0b;
+    }
+}

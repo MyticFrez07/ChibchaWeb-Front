@@ -1,0 +1,66 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@data/*": ["src/app/helpers/data/*"],
+      "@directives/*": ["src/app/helpers/directives/*"],
+      "@guards/*": ["src/app/helpers/guards/*"],
+      "@interceptors/*": ["src/app/helpers/interceptors/*"],
+      "@interfaces/*": ["src/app/helpers/interfaces/*"],
+      "@modules/*": ["src/app/modules/*"],
+      "@objects/*": ["src/app/objects/*"],
+      "@pipes/*": ["src/app/helpers/pipes/*"],
+      "@service/*": ["src/app/helpers/services/*"],
+      "@shared/*": ["src/app/helpers/shared/*"],
+      "@types/*": ["src/app/helpers/types/*"],
+      "@utils/*": ["src/app/helpers/utils/*"]
+    },
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+
+    "rootDir": "./src" ,
+    /* Experimental Options */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    "moduleResolution": "node",
+    "skipLibCheck":true,
+    "skipDefaultLibCheck": true,
+    "strictFunctionTypes": false,
+    "exactOptionalPropertyTypes": false,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
+    "checkJs": false,
+    "noStrictGenericChecks": true,
+    "allowUnusedLabels": false,
+
+    "importHelpers": true,
+    "target": "es2017",
+    "types": [ "node" ],
+    "typeRoots": [ "./node_modules/@types" ],
+    "module": "es2020",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "resolveJsonModule":true,
+    "allowSyntheticDefaultImports":true,
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

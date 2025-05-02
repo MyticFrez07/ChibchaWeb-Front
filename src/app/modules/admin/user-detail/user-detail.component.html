@@ -1,0 +1,39 @@
+<div class="container mt-5" *ngIf="response">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center mb-4">Detalles de usuario</h2>
+        <ul class="list-group">
+          <li class="list-group-item" *ngIf="response.country">
+            <strong>País:</strong> {{ response.country.name }}
+          </li>
+          <li class="list-group-item" *ngIf="response.rol">
+            <strong>Rol:</strong> {{ response.rol.name }}
+          </li>
+          <li class="list-group-item" *ngIf="response.user && response.user.email">
+            <strong>Email:</strong> {{ response.user.email }}
+          </li>
+          <li class="list-group-item" *ngIf="response.user && response.user.name">
+            <strong>Usuario:</strong> {{ response.user.name }}
+          </li>
+          <li class="list-group-item" *ngIf="response.user && response.user.document_type">
+            <strong>Tipo de Documento:</strong> {{ response.user.document_type }}
+          </li>
+          <li class="list-group-item" *ngIf="response.user && response.user.idDocument">
+            <strong>Número de Documento:</strong> {{ response.user.idDocument }}
+          </li>
+          <li class="list-group-item" *ngIf="response.user && response.user.phone">
+            <strong>Teléfono:</strong> {{ response.user.phone }}
+          </li>
+          <li class="list-group-item" *ngIf="response.user && response.user.creditCard">
+            <strong>Tarjeta de crédito:</strong> {{ maskCreditCard(response.user.creditCard) }}
+          </li>
+          <li class="list-group-item" *ngIf="response.user && response.user.direction">
+            <strong>Direction:</strong> {{ response.user.direction }}
+          </li>
+        </ul>
+      </div>
+    <div class="container mt-5 d-flex justify-content-center">
+        <a class="btn btn-primary" [routerLink]="['/admin/user-managment']">Volver</a>
+    </div>
+    </div>
+  </div>

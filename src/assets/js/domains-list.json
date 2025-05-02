@@ -1,0 +1,36 @@
+[
+  {
+    "name": "paginaweb.com.co",
+    "costDomain": 1000,
+    "subtitle": "Únicamente el primer año con un plazo de 2 años",
+    "inCart": false,
+		"provider": ".CO",
+    "distributor_id":"1",
+    "buyout_id": 2,
+		"providerImage":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/DotCO_logo.svg/1200px-DotCO_logo.svg.png"
+  },
+  {
+    "name": "paginaweb.com",
+    "price": 800,
+    "subtitle": "Por el primer año",
+    "inCart": false,
+		"provider": ".CO",
+		"providerImage":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/DotCO_logo.svg/1200px-DotCO_logo.svg.png"
+  },
+  {
+    "name": "paginaweb.edu.co",
+    "price": 1200,
+    "subtitle": "Oferta especial",
+    "inCart": false,
+		"provider": ".CO",
+		"providerImage":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/DotCO_logo.svg/1200px-DotCO_logo.svg.png"
+  },
+  {
+    "name": "dominioejemplo.net",
+    "price": 900,
+    "subtitle": "Descuento del 10%",
+    "inCart": false,
+		"provider": ".CO",
+		"providerImage":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/DotCO_logo.svg/1200px-DotCO_logo.svg.png"
+  }
+]

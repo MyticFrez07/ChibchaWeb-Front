@@ -1,0 +1,27 @@
+<div *ngFor="let buyout of buyoutData">
+    <div>
+        <h3>Buyout ID: {{ buyout.buyouts.id }}</h3>
+        <p>Status: {{ buyout.buyouts.status }}</p>
+        <p>Total Cost: {{ buyout.totalCost }}</p>
+    </div>
+
+    <div *ngIf="buyout.buyoutsDomains.length > 0">
+        <h4>Domains:</h4>
+        <ul>
+            <li *ngFor="let domain of buyout.buyoutsDomains">
+                {{ domain.name }} - Cost: {{ domain.costDomain }}
+            </li>
+        </ul>
+    </div>
+
+    <div *ngIf="buyout.buyoutsHosting.length > 0">
+        <h4>Hosting:</h4>
+        <ul>
+            <li *ngFor="let hosting of buyout.buyoutsHosting">
+                {{ hosting.hosting_name }} - Plan: {{ hosting.plan_id }} - Platform: {{ hosting.platform_id }}
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+</div>

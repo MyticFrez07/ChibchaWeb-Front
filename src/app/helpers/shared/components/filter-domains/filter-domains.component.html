@@ -1,0 +1,39 @@
+<div class="container mt-4">
+	<h3>Filtrar resultados</h3>
+	<form [formGroup]="filterForm" (ngSubmit)="onSubmit()" class="row">
+		<div class="col-6">
+			<div class="form-group">
+				<label for="termination">Terminación de dominio:</label>
+				<select id="termination" class="form-control" formControlName="termination">
+					<option value="">Seleccionar</option>
+					<option *ngFor="let term of domainTerminations" [value]="term">{{ term }}</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="industry">Industria:</label>
+				<select id="industry" class="form-control" formControlName="industry">
+					<option value="">Seleccionar</option>
+					<option *ngFor="let ind of industries" [value]="ind">{{ ind }}</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="col-6">
+			<div class="form-group">
+				<label for="price">Rango de precio:</label>
+				<input type="range" id="price" class="form-control" formControlName="price" [min]="minPrice" [max]="maxPrice">
+				<span>{{ filterForm.get('price').value }} pesos</span>
+			</div>
+
+			<div class="form-group">
+				<label for="characters">Cantidad de caracteres:</label>
+				<input type="range" id="characters" class="form-control" formControlName="characters" [min]="minCharacters"
+					[max]="maxCharacters">
+				<span>{{ filterForm.get('characters').value }} caracteres</span>
+			</div>
+		</div>
+	</form>
+
+	<button class="btn btn-primary" type="submit">Aplicar filtros</button>
+</div>

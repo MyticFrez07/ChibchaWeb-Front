@@ -1,0 +1,53 @@
+
+
+<h1>Distribuidores</h1>
+<div class="container my-3">
+    <a class="btn btn-primary" [routerLink]="['/admin/distributor']">Agregar Distribuidor</a>
+</div>
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+</mat-form-field>
+<div class="mat-elevation-z8 table-responsive" >
+    <table mat-table [dataSource]="dataSource" matSort>
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>NIT</th>
+        <td mat-cell *matCellDef="let distribuidor"> {{distribuidor.id}} </td>
+        </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="categoria">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Categoria </th>
+        <td mat-cell *matCellDef="let distribuidor"> {{distribuidor.category_id}} </td>
+        </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre</th>
+        <td mat-cell *matCellDef="let distribuidor"> <h1><strong>{{distribuidor.name}}</strong></h1> </td>
+        </ng-container>
+        <!-- Name Column -->
+        
+            <!-- Weight Column -->
+        <ng-container matColumnDef="dominios">
+            <th mat-header-cell *matHeaderCellDef> # Dominios</th>
+            <td mat-cell *matCellDef="let distribuidor"> {{distribuidor.number_domains}} </td>
+        </ng-container>
+        <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let distribuidor" style="text-align: right">
+                <a class="pointer">
+                    <mat-icon (click)="showDetails(distribuidor)"> search </mat-icon>
+                </a>
+                <!--<a class="pointer">
+                    <mat-icon (click)="update(distribuidor)"> edit </mat-icon>
+                </a>-->
+                <a class="pointer">
+                    <mat-icon (click)="confirmDelete(distribuidor.id)"> delete </mat-icon>
+                </a>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons ></mat-paginator>
+</div>

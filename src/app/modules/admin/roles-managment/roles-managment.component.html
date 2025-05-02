@@ -1,0 +1,47 @@
+
+
+<h1>Roles</h1>
+<div class="container my-3">
+    <a class="btn btn-primary" [routerLink]="['/admin/rol']">Agregar Rol</a>
+</div>
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+</mat-form-field>
+<div class="mat-elevation-z8 table-responsive" >
+    <table mat-table [dataSource]="dataSource" matSort>
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+        <td mat-cell *matCellDef="let rol"> {{rol.id}} </td>
+        </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre </th>
+        <td mat-cell *matCellDef="let rol"> {{rol.name}} </td>
+        </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Descripción</th>
+        <td mat-cell *matCellDef="let rol"> {{rol.description}}</td>
+        </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let rol" style="text-align: right">
+                <a class="pointer">
+                    <mat-icon (click)="showDetails(rol)"> search </mat-icon>
+                </a>
+                <!--<a class="pointer">
+                    <mat-icon (click)="update(rol)"> edit </mat-icon>
+                </a>-->
+                <a class="pointer">
+                    <mat-icon (click)="confirmDelete(rol.id)"> delete </mat-icon>
+                </a>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons ></mat-paginator>
+</div>

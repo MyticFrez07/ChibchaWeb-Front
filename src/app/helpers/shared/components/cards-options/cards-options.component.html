@@ -1,0 +1,31 @@
+<div id="" class="container">
+	<div class="row justify-content-center  ">
+		<div class="col" *ngFor="let item of cardsList">
+			<div class="card">
+				<div class="card-body">
+					<div class="">
+						<div id="" class="text-center">
+							<h2>{{item.dominio}}</h2>
+							<span class="" style="display: none;">
+								<i class="fas fa-spinner fa-spin"></i>
+							</span>
+							<div class="" style="display: block;">
+								<button type="button" class="btn btn-secondary w-hidden" disabled="disabled"
+									style="display: none;">{{item && item['estado'] ? 'Disponible': 'No disponible'}}</button>
+								<span class="available price w-hidden">$ {{item.price.toLocaleString('es-CO')}} COP</span>
+								<div class="d-grid gap-2 mt-2">
+									<button type="button" class="btn btn-success w-hidden" style="display: inline-block;" *ngIf="!item['inCart']" (click)="addToCart(item)">
+										Añadir
+									</button>
+									<button class="btn btn-danger m-2" (click)="removeFromCart(item)" *ngIf="item['inCart']">
+										<i class="bi bi-trash"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

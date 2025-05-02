@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <form [formGroup]="tarjetaForm" (ngSubmit)="enviarFormulario()">
+        <div class="mb-3">
+            <label for="numeroTarjeta" class="form-label">Número de Tarjeta:</label>
+            <input type="text"
+                   id="numeroTarjeta"
+                   class="form-control"
+                   maxlength="19"
+                   formControlName="card_number">
+            <!--<input type="text"
+                   id="numeroTarjeta"
+                   class="form-control"
+                   maxlength="19"
+                   formControlName="card_number"
+                   (input)="onCardNumberInput($event)">-->
+            <div *ngIf="tarjetaForm.get('card_number').hasError('tarjetaInvalida')" class="text-danger">
+              Número de tarjeta inválido.
+            </div>
+          </div>
+          
+
+        <div class="mb-3">
+            <label for="nombreTitular" class="form-label">Nombre del Titular:</label>
+            <input type="text" id="nombreTitular" maxlength="50" class="form-control" formControlName="owner">
+        </div>
+
+        <div class="mb-3">
+            <label for="cardholder_name" class="form-label">Proveedor</label>
+            <input type="text" id="cardholder_name" maxlength="50" class="form-control" formControlName="cardholder_name">
+        </div>
+
+        <div class="mb-3">
+            <label for="fechaVencimiento" class="form-label">Fecha de Vencimiento (MM/YY):</label>
+            <input type="text" id="fechaVencimiento" maxlength="5" class="form-control" formControlName="expiration_date">
+            <div *ngIf="tarjetaForm.get('expiration_date').hasError('fechaInvalida')" class="text-danger">
+                Fecha de vencimiento inválida.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="cvc" class="form-label">CVC:</label>
+            <input type="text" id="cvc" maxlength="4" class="form-control" formControlName="cvscard">
+        </div>
+
+        <!-- Otros campos del formulario -->
+
+        <button type="submit" class="btn btn-primary" [disabled]="!tarjetaForm.valid">Guardar</button>
+    </form>
+</div>

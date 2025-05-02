@@ -1,0 +1,55 @@
+<div class="container">
+	<div class="row">
+			<div class="card">
+				<div class="card-header text-primary text-center">
+					<div class="col-12 d-flex align-items-center plan">
+						<img [src]="'/assets/img/clients/'+data.name+'.png'" [alt]="'Proveedor '+data.name" class="img-fluid">
+					</div>
+				</div>
+				<div class="bg-primary text-white text-center card-subtitle">
+					<h3 class=" my-2 text-muted dark">{{data.control_panel}}</h3>
+				</div>
+				<div class="card-body">
+					<div class="pt-price-block">
+						<span class="pt-currency"></span>
+						<span class="pt-price-main" *ngIf="data.cost_per_year">
+							<span class="pt-subprice">$</span>{{platformSelected.id === 2 ? (data.cost_per_year*discount).toLocaleString('es-CO'):data.cost_per_year.toLocaleString('es-CO')}} COP
+						</span><span class="pt-sub">/año</span>
+					</div>
+					<ul class="pt-list" >
+						<li><i class="bi bi bi-hdd"></i> {{data.space}}</li>
+						<li><i class="bi bi bi-bar-chart"></i> {{data.monthly_traffic}}</li>
+						<li><i class="bi bi bi-envelope"></i> {{data.email_accounts}}</li>
+						<li><i class="bi bi bi-database"></i> {{data.databases}} Bases de datos</li>
+						<li><i class="bi bi bi-globe"></i> {{data.id}} Dominio</li>
+						<li><i class="bi bi bi-file-earmark-text"></i> {{data.supported_cms}}</li>
+						<li><i class="bi bi bi-rocket"></i> {{data.web_server}}</li>
+						<li><i class="bi bi bi-shield"></i> {{data.security}}</li>
+						<li><i class="bi bi bi-palette"></i> {{data.site_builder}}</li>
+						<li><i class="bi bi bi-upload"></i> {{data.backups}}</li>
+						<li><i class="bi bi bi-lock"></i> {{data.free_ssl}}</li>
+					</ul>
+					<ul class="pt-list" *ngIf="platform">
+						<li>
+							<i class="bi bi-server"></i>
+							<label for="platform">Plataforma</label>
+							<select [(ngModel)]="platformSelected" id="platform" class="form-select">
+								<option [value]="item.id" *ngFor="let item of platform">
+									<span><i class="bi bi-windows"></i> {{item.name}}</span>
+								</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+				<div class="card-footer">
+					<button class="btn m-2 btn-success" (click)="addToCart(data)" *ngIf="!data.inCart">
+						<i [ngClass]="{'bi bi-cart-check': data.inCart, 'bi bi-cart-plus': !data.inCart, 'disabled': data.inCart }"></i>
+						<span class="mx-2">Comprar</span>
+					</button>
+					<button class="btn btn-danger m-2" (click)="removeFromCart(data)" *ngIf="data.inCart">
+						<i class="bi bi-trash"></i>
+					</button>
+				</div>
+			</div>
+	</div>
+</div>

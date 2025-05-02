@@ -1,0 +1,59 @@
+[
+  {
+      "id":1,
+      "title": "Chincha Platino",
+      "subTitle": "Panel de control cPanel",
+			"currency": 80000,
+      "features": [
+        { "icon": "bi bi-hdd", "text": "10 GB Espacio SSD NVMe" },
+        { "icon": "bi bi-bar-chart", "text": "500 GB de Tráfico / mes" },
+        { "icon": "bi bi-envelope", "text": "10 Cuentas E-mail" },
+        { "icon": "bi bi-database", "text": "2 Bases de datos" },
+        { "icon": "bi bi-globe", "text": "1 Dominio permitido" },
+        { "icon": "bi bi-file-earmark-text", "text": "WordPress / Joomla / Otros" },
+        { "icon": "bi bi-rocket", "text": "LiteSpeed + LSCache" },
+        { "icon": "bi bi-shield", "text": "Seguridad Imunify360" },
+        { "icon": "bi bi-palette", "text": "Constructor de sitios Pro" },
+        { "icon": "bi bi-upload", "text": "Copias de seguridad" },
+        { "icon": "bi bi-lock", "text": "SSL gratis (https://)" }
+      ]
+  },
+	{
+      "id":2,
+      "title": "Chibcha Plata",
+      "subTitle": "Panel de control cPanel",
+			"currency": 150000,
+      "features": [
+        { "icon": "bi bi-hdd", "text": "30 GB Espacio SSD NVMe" },
+        { "icon": "bi bi-bar-chart", "text": "600 GB de Tráfico / mes" },
+        { "icon": "bi bi-envelope", "text": "20 Cuentas E-mail" },
+        { "icon": "bi bi-database", "text": "5 Bases de datos" },
+        { "icon": "bi bi-globe", "text": "2 Dominio permitido" },
+        { "icon": "bi bi-file-earmark-text", "text": "WordPress / Joomla / Otros" },
+        { "icon": "bi bi-rocket", "text": "LiteSpeed + LSCache" },
+        { "icon": "bi bi-shield", "text": "Seguridad Imunify360" },
+        { "icon": "bi bi-palette", "text": "Constructor de sitios Pro" },
+        { "icon": "bi bi-upload", "text": "Copias de seguridad" },
+        { "icon": "bi bi-lock", "text": "SSL gratis (https://)" }
+      ]
+  },
+	{
+      "id":3,
+      "title": "Chibcha Oro",
+      "subTitle": "Panel de control cPanel",
+			"currency": 220000,
+      "features": [
+        { "icon": "bi bi-hdd", "text": "50 GB Espacio SSD NVMe" },
+        { "icon": "bi bi-bar-chart", "text": "700 GB de Tráfico / mes" },
+        { "icon": "bi bi-envelope", "text": "50 Cuentas E-mail" },
+        { "icon": "bi bi-database", "text": "10 Bases de datos" },
+        { "icon": "bi bi-globe", "text": "3 Dominio permitido" },
+        { "icon": "bi bi-file-earmark-text", "text": "WordPress / Joomla / Otros" },
+        { "icon": "bi bi-rocket", "text": "LiteSpeed + LSCache" },
+        { "icon": "bi bi-shield", "text": "Seguridad Imunify360" },
+        { "icon": "bi bi-palette", "text": "Constructor de sitios Pro" },
+        { "icon": "bi bi-upload", "text": "Copias de seguridad" },
+        { "icon": "bi bi-lock", "text": "SSL gratis (https://)" }
+      ]
+  }
+]

@@ -1,0 +1,19 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header [style.background]="'rgba(0, 116, 186, 1)'">
+      <mat-panel-title>
+        <mat-icon>support</mat-icon>
+        Ticket de Soporte
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="ticket-content">
+      <p>Nombre del ticket: {{codeTicket()}}</p>
+      <button mat-raised-button color="primary" (click)="aceptarTicket()">Aceptar</button>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<app-chart title="Support Pin"></app-chart>
+<app-chart title="Su Información" NombreBoton="Agregar Información"></app-chart>
+<app-chart title="Contactos"></app-chart>
+<app-chart title="Accesos Directos"></app-chart>

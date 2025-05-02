@@ -1,0 +1,56 @@
+
+<div>
+    <h1><strong>Compras realizadas</strong></h1>
+   <div >
+    <div *ngFor="let buyout of response">
+        <div>
+            <h2><strong>Código de compra:</strong> {{ buyout.buyouts.id }}</h2>
+            <h3><strong>Estado de la compra:</strong> {{ buyout.buyouts.status }}</h3>
+            <h3><strong>Total:</strong> ${{ buyout.totalCost.toLocaleString('es-CO') }} COP</h3>
+        </div>
+        <div *ngIf="buyout.buyoutsDomains.length > 0">
+            <div class="alert alert-warning" role="alert">
+              <h4>Dominios:</h4>
+            </div>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Dominio</th>
+                  <th>Valor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let domain of buyout.buyoutsDomains">
+                  <td>{{ domain.name }}</td>
+                  <td>${{ domain.costDomain.toLocaleString('es-CO') }} COP</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div *ngIf="buyout.buyoutsHosting.length > 0">
+            <div class="alert alert-info" role="alert">
+              <h4>Hosting:</h4>
+            </div>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Plan</th>
+                  <th>Plataforma</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let hosting of buyout.buyoutsHosting">
+                  <td>Chibcha {{ hosting.hosting_name }}</td>
+                  <td>{{ hosting.plan_id ==1 ? 'Plata' : hosting.plan_id == 2? 'Oro':'Platino' }}</td>
+                  <td>{{ hosting.platform_id == 1 ? 'Microsoft Windows' : 'Linux Os' }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+        <hr>
+    </div>
+   </div>
+</div>

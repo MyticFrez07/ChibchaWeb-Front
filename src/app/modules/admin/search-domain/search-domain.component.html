@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <h2>Buscar</h2>
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Buscar" formControlName="searchQuery">
+      <button class="btn btn-primary" type="submit" *ngIf="searchForm.valid">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </form>
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="activeTab === 'resultados'" (click)="activeTab = 'resultados'">Resultados</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="activeTab === 'filtrar'" (click)="activeTab = 'filtrar'">Filtrar</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane" [class.active]="activeTab === 'resultados'">
+			<div class="container" *ngIf="domains.length>0">
+        <app-cards-options (addProduct)="addToCart($event)" (removeProduct)="removeToCart($event)" ></app-cards-options>
+				<app-item-domain [isExist]="isDomainExist" (addProduct)="addToCart($event)" (removeProduct)="removeToCart($event)"class="col-12 col-md-4 animate__animated " [ngClass]="['animate__delay-'+idx+'s', idx/2===0 ? 'animate__lightSpeedInRight':'animate__lightSpeedInLeft']" *ngFor="let item of domains; index as idx" [domain]="item"></app-item-domain>
+			</div>
+    </div>
+    <div class="tab-pane" [class.active]="activeTab === 'filtrar'">
+			<app-filter-domains [domains]="domains" (domainsFiltered)="newDomainList = $event"></app-filter-domains>
+			<div class="container" *ngIf="newDomainList && newDomainList.length>0">
+        <app-cards-options (addProduct)="addToCart($event)" (removeProduct)="removeToCart($event)" ></app-cards-options>
+				<app-item-domain (addProduct)="addToCart($event)" (removeProduct)="removeToCart($event)" class="col-12 col-md-4 animate__animated " [ngClass]="['animate__delay-'+idx+'s', idx/2===0 ? 'animate__lightSpeedInRight':'animate__lightSpeedInLeft']" *ngFor="let item of newDomainList; index as idx" [domain]="item"></app-item-domain>
+			</div>
+			<div class="container" *ngIf="!newDomainList || newDomainList.length<=0">
+				<div class="text-center">
+					<h2>No se encontraron resultados</h2>
+				</div>
+			</div>
+    </div>
+  </div>
+</div>
+<app-shopping-cart-banner></app-shopping-cart-banner>

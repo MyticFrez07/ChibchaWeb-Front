@@ -1,0 +1,10 @@
+<div>
+    <button class="btn btn-primary m-1"  (click)="convertToJson()">Convert to XML</button>
+</div>
+<div>
+    <button class="btn btn-primary m-1" (click)="printXml()">Print XML</button>
+    <button class="btn btn-primary m-1" (click)="downloadXml()">Download XML</button>
+</div>
+<div>
+    <textarea #xmlOutput [value]="xmlOutput" placeholder="XML Output"></textarea>
+</div>

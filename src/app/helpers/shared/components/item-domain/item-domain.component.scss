@@ -1,0 +1,57 @@
+
+  .domain-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  h2{
+    padding: 0;
+    margin: 0;
+  }
+  .domain-info {
+    flex: 1;
+  }
+  
+  .domain-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .domain-price span {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .domain-price small {
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .domain-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn-primary {
+    margin-right: 10px;
+  }
+  
+  /* Estilos para el icono de carrito cuando se agrega */
+  .bi-cart-check, .btn-primary {
+    color: #fff;
+    background-color: green;
+  }
+  
+  /* Estilos para el icono de basura */
+  .btn-danger {
+    border: none;
+    cursor: pointer;
+  }
+  
+  .badge{
+    font-size: .7rem;
+  }

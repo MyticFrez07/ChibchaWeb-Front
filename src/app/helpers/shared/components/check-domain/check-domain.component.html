@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">Registro de dominios en Colombia</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center">¡Compruebe que el dominio deseado esté disponible!</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+            <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+                <input type="hidden" name="multiple_tld" value="disable">
+                <input type="hidden" name="whoislookuponly" value="no">
+                <input type="hidden" name="integration" value="custom">
+                <!-- Agrega los otros campos ocultos si son necesarios -->
+
+                <div class="input-group">
+                    <input type="text" class="form-control" autocomplete="off" id="Search" formControlName="domain" placeholder="Compruebe la disponibilidad del dominio...">
+                    <span class="input-group-btn">
+                        <button type="submit" id="Submit" class="btn btn-info">Buscar</button>
+                    </span>
+                </div>
+
+                <div id="loading" class="text-center">
+                    <img width="64" height="18" src="https://www.latinoamericahosting.com.co/wp-content/plugins/wp-domain-checker/images/load.gif" alt="loading">
+                </div>
+            </form>
+                <div *ngIf="isResult" class="result large">
+                    <div class="alert alert-success" role="alert" *ngIf="!isExist">
+                        <span>¡Felicidades! <strong>{{searchForm.get('domain').value}}</strong> ¡está disponible!</span>
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="isExist">
+                        <span><strong>{{searchForm.get('domain').value}}</strong> no está disponible</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p class="text-center"><i class="fas fa-globe-americas"></i> Por favor ingrese el nombre del dominio que desee verificar sin "www." por ejemplo: <a class="c-link" href="http://dominio.com/" target="_blank" rel="noopener noreferrer">dominio.com</a>&nbsp;(dominio.TLD)</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+    <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+        <h1>Actualizar Estado Ticket</h1>
+
+        <div class="form-group mb-3">
+            <label for="asunto">Asunto</label>
+            <input type="text" class="form-control disabled" id="asunto" formControlName="description" placeholder="Asunto"
+                required>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="departamento">Estado</label>
+            <select class="form-select" id="departamento" formControlName="state">
+                <option value="false">Sin atender</option>
+                <option value="true">Solucionado</option>
+            </select>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="servicios">Servicios relacionados</label>
+            <input type="text" class="form-control disabled" id="servicios" formControlName="services"
+                placeholder="Servicios relacionados">
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="prioridad">Prioridad</label>
+            <select class="form-select" id="prioridad" formControlName="priority">
+                <option value="1">Baja</option>
+                <option value="2">Media</option>
+                <option value="3">Alta</option>
+            </select>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="mensaje">Mensaje</label>
+            <textarea class="form-control disabled" id="editor" formControlName="message" rows="4"
+                placeholder="Mensaje"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+    </form>
+</div>

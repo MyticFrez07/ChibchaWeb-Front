@@ -1,0 +1,13 @@
+<div class="container" >
+    <div class="row justify-content-center  align-items-stretch" *ngIf="hostingList && !isLoading">
+        <div class="col-12 col-md-4 animate__animated animate__flipInY" [ngClass]="['animate__delay-'+idx+'s']" *ngFor="let item of hostingList; index as idx">
+            <app-card-hosting (addProduct)="addToCart($event)" (removeProduct)="removeToCart($event)" [data]="item"></app-card-hosting>
+        </div>
+    </div>
+    <div class="row justify-content-center  align-items-stretch" *ngIf="isLoading">
+        <div class="col-12 col-md-4" *ngFor="let item of [0,0,0,]">
+            <app-skeleton-card></app-skeleton-card>
+        </div>
+    </div>
+</div>
+<app-shopping-cart-banner></app-shopping-cart-banner>

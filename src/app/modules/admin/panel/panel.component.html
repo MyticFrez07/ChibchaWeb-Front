@@ -1,0 +1,38 @@
+
+
+<mat-list>
+	<mat-list-item>
+		<h1>Bienvenido, {{username}}</h1>
+	</mat-list-item>
+	<mat-divider></mat-divider>
+	<div class="cuadros">
+		<app-recuadro [numero]="hostingCount" nombre="HOSTINGS"></app-recuadro>
+		<app-recuadro [numero]="domainCount" nombre="DOMINIOS"></app-recuadro>
+		<app-recuadro [numero]="tokenCount" nombre="TICKETS"></app-recuadro>
+		<app-recuadro [numero]="invoice" nombre="FACTURAS"></app-recuadro>
+	</div>
+</mat-list>
+
+<app-check-domain></app-check-domain>
+
+<div class="row ">
+	<app-cuadros class="col-12" title="Productes/Servicios-Activos"
+		def="Parece que no tienes ningún Producto/Servicio contratado todavia."></app-cuadros>
+	<div class="col-6 my-2">
+		<app-cuadros clase="mb-2" title="Registrar Dominies"
+			def="Ningún Ticket reciente. Si necesita ayuda, por favor Abra un Ticket"></app-cuadros>
+		<app-cuadros clase="mb-2" title="Tickets de Soporte - Recientes" [content]="tiketInfo"></app-cuadros>
+	</div>
+	<div class="contenedor-dominios col-6 my-2">
+		<div class="head">Registrar Dominios</div>
+		<form class="foot ">
+			<mat-form-field class="">
+				<input matInput placeholder="">
+			</mat-form-field>
+			<div class="botones">
+				<button mat-raised-button color="basic">Registrar</button>
+				<button mat-raised-button color="primary">Transferir</button>
+			</div>
+		</form>
+	</div>
+</div>

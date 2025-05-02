@@ -1,0 +1,35 @@
+.selected-domains {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .selected-info {
+    display: inline-block;
+    padding: 5px;
+    margin-right: 20px;
+  }
+  
+  .selected-info span {
+    display: block;
+    font-size: 18px;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+  /* Estilos para el icono de billete */
+  .bi-cash {
+    margin-right: 10px;
+    font-size: 24px;
+  }

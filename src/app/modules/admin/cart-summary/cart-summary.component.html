@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3>Resumen del carrito</h3>
+    </div>
+    <!-- Columna de productos seleccionados -->
+    <div class="col-md-6">
+      <!-- dominios seleccionados -->
+      <div  *ngIf="productSelected">
+        <div *ngFor="let item of productSelected; let i = index"
+          class="card py-2 px-3 mb-3">
+					<div class="row">
+						<div class="col-3 d-flex align-items-center">
+							<img [src]="item.providerImage" width="auto" alt="Proveedor" class="img-fluid">
+						</div>
+						<!-- Detalles del dominio -->
+						<div class="col-9">
+							<div class="">
+								<p class="mb-0"><strong>Nombre:</strong> {{ item.name }}</p>
+								<p class="mb-0"><strong>Proveedor:</strong> {{ item.provider }}</p>
+								<!-- <p class="mb-0"><strong>Años:</strong> {{ item.years }} {{item.years <= 1?'Año':'Años'}}</p> -->
+								<!-- <div class="form-group">
+									<label for="years"><strong>Años:</strong></label>
+									<select formControlName="years" id="years" required class="form-control">
+										<option value="1" >1 Año</option>
+										<option value="2" >2 Años</option>
+										<option value="5" selected>5 Años</option>
+									</select>
+								</div> -->
+								<p class="mb-0"><strong>Total:</strong> <u>{{ item['costDomain'] | currency:'COP' }}</u></p>
+								<p class="mb-0"><strong>Plan:</strong> {{ plan }}</p>
+								<p class="mb-0"><strong>Descuento:</strong> {{ item.discount }}%</p>
+							</div>
+              <div class="alert alert-success" role="alert">
+								<p class="mb-0"><strong>Total con descuento:</strong> {{ (item['costDomain'] * (1 - item.discount / 100)) | currency:'COP' }}</p>
+              </div>
+						</div>
+					</div>
+        </div>
+      </div>
+      <!-- hosting seleccionados -->
+      <div  *ngIf="hostingSelected">
+        <div *ngFor="let item of hostingSelected; let i = index"
+          class="card py-2 px-3 mb-3">
+					<div class="row">
+						<div class="col-3 d-flex align-items-center plan">
+              <img [src]="'/assets/img/clients/'+item.hosting_name+'.png'" [alt]="'Proveedor '+item.hosting_name" class="img-fluid">
+						</div>
+						<!-- Detalles del dominio -->
+						<div class="col-9">
+							<div class="">
+								<p class="mb-0"><strong>Plataformas:</strong> {{ item.platform == 1 ? 'Microsoft Windows': 'Linux OS'}}</p>
+								<p class="mb-0"><strong>Proveedor:</strong> Chibchaweb</p>
+								<p class="mb-0"><strong>Años:</strong> 1 año</p>
+                <div class="alert alert-success" role="alert">
+                  <p class="mb-0"><strong>Total:</strong> <u> {{ item.currency | currency:'COP' }}</u></p>
+                </div>
+							</div>
+						</div>
+					</div>
+        </div>
+      </div>
+    </div>
+    <!-- Columna de resumen del pedido -->
+    <div class="col-md-6">
+      <div class="card">
+        <h3 class="card-header">Resumen del Pedido</h3>
+        <div class="card-body" *ngIf="productSelected">
+          <p><strong>Cantidad de Artículos Seleccionados:</strong> {{ productSelected.length }}</p>
+          <p *ngIf="productSelected.length >0"><strong>Dominios Seleccionados:</strong></p>
+          <ul *ngIf="productSelected.length >0">
+            <li *ngFor="let domain of productSelected">{{ domain.name }}</li>
+          </ul>
+          <p *ngIf="hostingSelected.length >0"><strong>Hostings Seleccionados:</strong></p>
+          <ul *ngIf="hostingSelected.length >0">
+            <li *ngFor="let hosting of hostingSelected">{{ hosting.title }}</li>
+          </ul>
+          <p><strong>Impuestos:</strong> </p>
+          <ul>
+            <li>IVA 19%: ${{iva.toLocaleString('es-CO')}} COP</li>
+          </ul>
+          <p><strong>Subtotal (COP):</strong> ${{ subtotal.toLocaleString('es-CO')}} COP</p>
+        </div>
+        <div class="card-footer">
+          <div class="row">
+            <div class="col-6">
+              <app-paypal></app-paypal>
+            </div>
+          </div>
+          <!-- <app-checkout></app-checkout> -->
+          <button class="btn btn-primary" (click)="confirmPayment()">Pagar</button>
+        </div>
+      </div>
+    </div>
+    <app-json-to-xml *ngIf="jsonXML" [jsonData]="jsonXML"></app-json-to-xml>
+  </div>
+</div>

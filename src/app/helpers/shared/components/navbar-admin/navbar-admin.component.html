@@ -1,0 +1,52 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center">
+	<div class="container d-flex align-items-center justify-content-between">
+
+		<div class="logo">
+			<h1><a href="#">Chibcha Web</a></h1>
+			<!-- Uncomment below if you prefer to use an image logo -->
+			<!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+		</div>
+
+		<nav id="navbar" class="navbar">
+			<ul>
+				<li><a class="nav-link scrollto active" href="#hero"></a></li>
+				<li class="dropdown"><a routerLink="/admin/ticket-management"><span>Tickets</span> <i class="bi bi-chevron-down"></i></a>
+					<ul>
+						<li><a routerLink="/admin/ticket-management">Registro de Tickets de Soporte</a></li>
+						<li><a routerLink="/admin/tickets">Crear tickets</a></li>
+					</ul>
+				</li>
+				<li><a class="nav-link scrollto" routerLink="/admin/dashboard">Dashboard</a></li>
+				<li class="dropdown" *ngIf="typeRol>2" ><a href="#"><span>Gestión</span> <i class="bi bi-chevron-down"></i></a>
+					<ul>
+						<li><a routerLink="/admin/distributors">Lista de Distribuidores</a></li>
+						<li><a >Perfil del Cliente</a></li>
+						<li><a routerLink="/admin/roles" >Gestionar Roles</a></li>
+					</ul>
+				</li>
+				<li class="dropdown" *ngIf="typeRol>2"><a href="#"><span>Registros</span> <i class="bi bi-chevron-down"></i></a>
+					<ul>
+						<li><a href="#" routerLink="/admin/buy-register" >Registro de Pagos</a></li>
+						<li><a href="#">Registro de Solicitudes de Dominio</a></li>
+					</ul>
+				</li>
+				<li class="dropdown dark"><a [routerLink]="['/admin/credit-card-managment']">Tarjetas</a>
+				  <ul>
+					<li><a routerLink="/admin/credit-card-managment">Gestionar tarjetas</a></li>
+					<li><a routerLink="/admin/add-credit-card">Agregar tarjeta</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown" *ngIf="typeRol>2"><a routerLink="/admin/user-managment"><span>Usuarios</span> <i class="bi bi-chevron-down"></i></a>
+					<ul>
+						<li><a >Permisos y Roles</a></li>
+						<li><a routerLink="/admin/user-managment" >Lista de usuarios</a></li>
+					</ul>
+				</li>
+				<li><a class="nav-link scrollto" [routerLink]="['/admin/search']" routerLinkActive="router-link-active">Home</a></li>
+				<li><routerLink class="getstarted scrollto" [routerLink]="['/']" (click)="logout()" routerLinkActive="router-link-active" >Logout</routerLink></li>
+			</ul>
+			<i class="bi bi-list mobile-nav-toggle"></i>
+		</nav><!-- .navbar -->
+	</div>
+</header><!-- End Header -->

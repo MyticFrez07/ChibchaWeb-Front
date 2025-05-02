@@ -1,0 +1,32 @@
+.card {
+  margin-top: 20px; // Espacio entre las tarjetas
+
+  .card-body {
+    .input-group {
+      margin-bottom: 20px; // Espacio entre los grupos de entrada
+
+      .btn-info {
+        background-color: #17a2b8; // Color de fondo del botón de búsqueda
+        border-color: #17a2b8; // Color del borde del botón de búsqueda
+      }
+
+      .btn-secondary,
+      .btn-add-to-cart {
+        background-color: #6c757d; // Color de fondo de botones no disponibles y añadir al carrito
+        border-color: #6c757d; // Color del borde de botones no disponibles y añadir al carrito
+      }
+      .btn-success {
+        background-color: #28a745; // Color de fondo del botón de disponibilidad
+        border-color: #28a745; // Color del borde del botón de disponibilidad
+      }
+      .btn-primary {
+        background-color: #007bff; // Color de fondo del botón de contacto de soporte
+        border-color: #007bff; // Color del borde del botón de contacto de soporte
+      }
+    }
+  }
+}
+
+.c-link {
+  color: #007bff; // Color del enlace
+}

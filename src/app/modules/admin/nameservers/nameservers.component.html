@@ -1,0 +1,53 @@
+<div class="cart-body">
+	<div class="header-lined">
+		<h1 class="font-size-36">Configuración de Dominios</h1>
+	</div>
+	<form method="post" action="" id="">
+		<div class="sub-heading">
+			<span class="primary-bg-color">Nameservers</span>
+		</div>
+		<p>Si quiere personalizar las DNS puede introducirlas a continuación. Por defecto, los nuevos dominios usaran
+			nuestras DNS para que apunten a nuestros servidores.</p>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label for="inputNs1">Nameserver 1</label>
+					<input type="text" class="form-control" id="inputNs1" name="domainns1" value="ns1.chibchaweb.com">
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label for="inputNs2">Nameserver 2</label>
+					<input type="text" class="form-control" id="inputNs2" name="domainns2" value="ns2.chibchaweb.com">
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label for="inputNs3">Nameserver 3</label>
+					<input type="text" class="form-control" id="inputNs3" name="domainns3" value="">
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label for="inputNs1">Nameserver 4</label>
+					<input type="text" class="form-control" id="inputNs4" name="domainns4" value="">
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="form-group">
+					<label for="inputNs5">Nameserver 5</label>
+					<input type="text" class="form-control" id="inputNs5" name="domainns5" value="">
+				</div>
+			</div>
+		</div>
+
+
+		<div class="text-center pt-4">
+			<button type="button" [routerLink]="['/admin/cart']" class="btn btn-primary btn-lg" >
+				Continuar<i class="fas fa-arrow-circle-right"></i>
+			</button>
+		</div>
+
+	</form>
+</div>

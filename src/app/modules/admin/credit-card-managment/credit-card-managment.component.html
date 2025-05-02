@@ -1,0 +1,20 @@
+
+<div class="row">
+    <button [routerLink]="['/admin/add-credit-card']" class="btn btn-success" ><i class="bi bi-credit-card"></i> Agregar</button>
+</div>
+<div class="container mt-5">
+    <h2>Listado de Tarjetas de Crédito</h2>
+    <div class="row">
+        <div *ngFor="let tarjeta of tarjetas" class="card mb-3 col.12 col-sm-4 col-md-3 mx-1">
+            <div class="card-body">
+                <h5 class="card-title">{{ tarjeta.cardholder_name }}</h5>
+                <p class="card-text"><strong>Número:</strong> {{ maskCreditCard(tarjeta.card_number) }}</p>
+                <p class="card-text"><strong>Titular:</strong> {{ tarjeta.nombreTitular ? tarjeta.nombreTitular:'John Doe' }}</p>
+                <!--<p class="card-text"><strong>Fecha de Vencimiento:</strong> {{ tarjeta.expiration_date }}</p>
+                <p class="card-text"><strong>CVC:</strong> {{ tarjeta.cvscard }}</p>--><!-- Botones para eliminar y modificar -->
+                <button class="btn btn-danger mx-1" (click)="confirmDeleteCard(tarjeta.id)"><i class="bi bi-trash"></i></button>
+                <button class="btn btn-warning mx-1" ><i class="bi bi-pen"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
